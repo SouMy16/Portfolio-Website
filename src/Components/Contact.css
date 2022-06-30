@@ -1,0 +1,157 @@
+.contact{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 80vw;
+    min-height: 100vh;
+    scroll-snap-align: start;
+    padding: 0 15px;
+}
+
+.contact h1{
+    position: relative;
+    display: inline;
+    color: rgba(253, 253, 253, 0.871);
+    font-family: Varela Round ,cursive;
+    font-size: 40px;
+    margin-top: 15px;
+}
+
+.contact h1 b{
+    opacity: 0;
+}
+
+.contact.active h1 b{
+    animation: show 1s ease 0.5s forwards;
+}
+
+.contact h1 span{
+    position: relative;
+    display: inline-flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    background: linear-gradient(50deg, var(--clr-pri),var(--clr-sec));
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    height: 0;
+}
+
+.contact.active h1 span {
+    animation: animate-contact 1s ease 1.5s forwards;
+}
+
+@keyframes animate-contact {
+    to{
+        height: 40px;
+    }
+}
+
+.contact h1 span::before{
+    position: absolute;
+    bottom:0;
+    content: "";
+    height: 2px;
+    width: 0;
+    background: linear-gradient(50deg, var(--clr-pri),var(--clr-sec));
+}
+
+.contact.active h1 span::before{
+    animation: expand 1s ease 0.7s forwards;
+}
+
+.contact .socials {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+    width: 100%;
+    opacity: 0;
+}
+
+.contact.active .socials {
+    animation: show 1s ease 2s forwards;
+}
+
+.contact .socials .icons {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid rgba(250, 248, 248, 0.941);
+    border-radius: 10%;
+    cursor: pointer;
+    padding: 20px;
+    transition: transform 0.2s ease;
+}
+
+.contact .socials .icons::before {
+    position: absolute;
+    content: "";
+    top: calc(100% + 2px);
+    height: 45vh;
+    width: 2px;
+    color: var(--c);
+    background-color: rgba(255, 255, 255, 0.559);
+}
+
+.contact .socials .icons::after {
+    position: absolute;
+    content: "";
+    top: calc(100% + 2px);
+    height:0;
+    width: 4px;
+    background-color: var(--c);
+    transition: 0.5s 0.1s;
+}
+
+.contact .socials .icons:hover::after {
+    height: 45vh;
+}
+
+.contact .socials .icons:hover{
+    border: 2px solid var(--c);
+    transform: translateY(-20px);
+}
+
+.contact .socials .icons .social-icons {
+    position: relative;
+    font-size: 55px;
+    padding: 3px;
+    color: rgba(255, 255, 255, 0.914);
+}
+
+.contact .socials .icons:hover .social-icons {
+    color: var(--c);
+}
+
+.contact .socials .icons .tooltip {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 150px;
+    border-radius: 10px;
+    background-color: rgba(240, 248, 255, 0.91);
+    backdrop-filter: blur(10px);
+    top: calc(100% + 45vh);
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: color 1s linear;
+    color: black;
+    transition: border 0.2s 0.7s linear;
+} 
+
+.contact .socials .icons:hover .tooltip {
+    color: var(--c);
+    border: 4px solid var(--c);
+}
+
+@media (max-width:850px){
+    
+}
+
